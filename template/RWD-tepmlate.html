@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+</head>
+
+<body>
+<div class="row">
+	{day of week, day month year}
+	{greeting} 
+</div>
+<div class="row">
+    <div class="left">
+        Weather: 
+    </div>
+    <div class="right">
+        Calendar (appointments): 
+    </div>
+</div>
+<div class="row">
+    <div class="left">
+        Birthdays: 
+    </div>
+    <div class="right">
+        News: 
+    </div>
+</div>
+<div class="row">
+    <div class="left">
+        Traffic to work: 
+    </div>
+    <div class="right">
+        Upcomming Holidays: 
+    </div>
+</div>
+<div class="row">
+    <div class="left">
+        Google Analytics: 
+    </div>
+    <div class="right">
+        
+    </div>
+</div>
+<div class="row">
+	Unsubscribe or subscribe for further letters here:
+	http://thebrief.com
+</div>
+
+
+    <style type="text/css">
+    	.left, .right {
+    		width: 49%;
+		    overflow: hidden;
+
+    	}
+		.left {
+		    float: left;
+		}
+		.right {
+		    float: right;
+		}
+		.row:after {
+		    content:"";
+		    display: table;
+		    clear: both;
+		}
+		img { max-width: 100%; height: auto; }
+
+		/* mobile device transform */
+		@media screen and (max-width: 480px) {
+		    .left, 
+		    .right {
+		        float: none;
+		        width: auto;
+		    }
+		}
+    </style>
+
+</body>
+
+</html>
