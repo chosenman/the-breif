@@ -35,6 +35,7 @@ app.get('/',function(req, res){
 app.post('/tokensignin',function(req, res){
   var token = req.body.idtoken;
   console.log(token);
+  // sub: 40983980002302 - to store info
   client.verifyIdToken(
       token,
       CLIENT_ID,
@@ -44,9 +45,19 @@ app.post('/tokensignin',function(req, res){
         var payload = login.getPayload();
         var userid = payload['sub'];
         console.log("user Id: " + userid);
-        // If request specified a G Suite domain:
-        //var domain = payload['hd'];
-        res.status(200).send('Logged in successfully');
+        console.dir(payload);
+
+        // checking if email is verified by Google
+        if(payload['email_verified']){
+          // do store userId or sub(subject as userId) in database as Primary key
+          console.log("user authorized");
+          res.status(200).send('success');
+
+        // else go to login registration page
+        } else {
+          res.status(200).send('failed');
+        }
+
       });
 
 
