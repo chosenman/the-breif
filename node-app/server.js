@@ -15,8 +15,8 @@ var port = 8020;
 
 var app = express();
 
-app.use(express.static(path.join(__dirname + "/static")));
-app.set('views', path.join(__dirname, './views'));
+app.use(express.static(path.join(__dirname + "/client/static")));
+app.set('views', path.join(__dirname, './client/views'));
 app.use(session({secret: 'S5oD42iH_ng-d3j!or2JO9cK8s'}));
 app.use(bodyParser.urlencoded({extended: true}));
 app.set('view engine', 'ejs');
