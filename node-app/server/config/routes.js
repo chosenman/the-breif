@@ -23,4 +23,9 @@ module.exports = function(app){
     users.user_profile(req, res)
   })
 
+  // logout routes
+  app.get("/logout", function(req, res){
+    users.logout(req, res)
+  })
+
 }
